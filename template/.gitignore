@@ -1,0 +1,27 @@
+# Build output and generated bundles
+/dist/
+/build/
+
+# Local environment and machine-specific configuration
+.env
+.env.*
+*.local.toml
+
+# Editor and OS noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# NOT ignored, deliberately:
+#
+#   docs/handoff/   — the method's axiom is that context not in the repository
+#                     does not exist. An ignored handoff is a resume aid that
+#                     fails in exactly the case it was written for: a fresh
+#                     session on another machine. It is deleted at step 8
+#                     instead, so nothing accumulates.
+#                     See docs/handoff/README.md.
+#
+#   the secrets map — committed and valueless, holding paths rather than values.
+#                     Ignoring it would mean nobody can tell what an environment
+#                     needs without access to the store.
