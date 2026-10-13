@@ -100,6 +100,18 @@ cd /path/to/new-project
 git init && git add -A && git commit -m "Document set at its initial version"
 ```
 
+**Or run [`tool/`](tool/README.md)**, which is the same copy with the answers
+already rendered into it: the kind and its ADR, the four roles and theirs, the
+task names spelled for the runner that was chosen, and the conditional documents
+this project has not earned deleted along with every link to them. It asks the
+questions above and writes records 1, 2, 3 and 6; journeys and the roadmap are
+still yours, for the reason step 0 gives. `template/` stays directly copyable, so
+the two paths lead to the same place.
+
+```bash
+cd framework/tool && uv run teamwork-init
+```
+
 Everything else grows as the project produces something to put in it. A document
 still at its seed content after three journeys is telling you it has not earned
 its place — delete it, or find out why nothing has been routed to it.
@@ -129,6 +141,7 @@ commands** — "the `ship` task" — so the runner can change without a rewrite.
 | [`CLAUDE.md`](template/CLAUDE.md) | The profile, the conventions, the eight-step loop |
 | [`docs/README.md`](template/docs/README.md) | The index, the routing map, the two session modes |
 | [`docs/dev-process.md`](template/docs/dev-process.md) | The method, the dials, and the evidence behind each claim |
+| [`docs/routing-and-sweep-spec.md`](template/docs/routing-and-sweep-spec.md) | The TODO taxonomy, sweep algorithm, dependencies, and triggers |
 | [`docs/design-notes.md`](template/docs/design-notes.md) | Engineering rules that generalise, marked `[inherited]` |
 | [`docs/glossary.md`](template/docs/glossary.md) | The vocabulary of the work itself |
 | [`docs/adr/`](template/docs/adr/) | Lifecycle, sections, the template, and ADRs 0001–0002 |

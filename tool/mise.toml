@@ -1,0 +1,26 @@
+[tools]
+python = "3.11"
+uv = "latest"
+
+[tasks.check]
+description = "The fast lane: lint, the anchor assertions, and the unit tests"
+run = [
+  "uv run ruff check src tests",
+  "uv run teamwork-init verify",
+  "uv run pytest -q",
+]
+
+[tasks.ship]
+description = "The gate: check, plus a real render of every project kind into a scratch tree"
+run = [
+  "mise run check",
+  "uv run python -m tests.render_every_kind",
+]
+
+[tasks.fmt]
+description = "Format and autofix"
+run = ["uv run ruff format src tests", "uv run ruff check --fix src tests"]
+
+[tasks.tasks]
+description = "Everything available, with descriptions"
+run = "mise tasks"

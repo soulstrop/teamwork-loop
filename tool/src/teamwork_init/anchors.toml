@@ -1,0 +1,144 @@
+# The anchors: the strings the template set already carries as placeholders, and
+# what each becomes once the wizard has an answer for it.
+#
+# `template/` stays byte-identical to what `cp -r` would give you, so the manual
+# path documented in USING-THIS-FRAMEWORK.md keeps working. The cost of that is
+# that these strings are a copy of text living somewhere else, and a template
+# edit can break one silently — so `teamwork-init verify` asserts that every
+# anchor below occurs exactly once in the file it names, and the `check` task
+# runs it.
+#
+# `render` names a function in `anchors.py`. `arg` is passed to it. An anchor
+# whose renderer returns nothing leaves the placeholder alone, which is the right
+# outcome for anything only a person can write.
+
+[[anchor]]
+file = "README.md"
+render = "project_title"
+find = "# *(Project name)*"
+
+[[anchor]]
+file = "README.md"
+render = "description"
+find = """
+*One or two sentences: what this is and what it does. Written for somebody who
+arrived from a link and knows nothing — this is the landing page.*"""
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "kind_sentence"
+find = "**Kind:** *(unset — spike · learning · on spec · production)*."
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "bar_sentence"
+find = """
+**The bar:** *(one sentence: what this project owes whoever uses it, and what it
+does not.)*"""
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "role_row"
+arg = "task_runner"
+find = "| Task runner | *(unset)* |"
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "role_row"
+arg = "toolchain_manager"
+find = "| Toolchain manager | *(unset)* |"
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "role_row"
+arg = "environment_manager"
+find = "| Environment manager | *(unset)* |"
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "role_row"
+arg = "dependency_manager"
+find = "| Dependency manager | *(unset)* |"
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "task_row"
+arg = "check"
+find = "| `check` | The fast lane: lint, types, fast tests — while working | *(unset)* |"
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "task_row"
+arg = "ship"
+find = "| `ship` | **The gate**: `check` + the journey E2E + every cross-reference | *(unset)* |"
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "task_row"
+arg = "fmt"
+find = "| `fmt` | Format and autofix | *(unset)* |"
+
+[[anchor]]
+file = "CLAUDE.md"
+render = "task_row"
+arg = "tasks"
+find = "| `tasks` | Everything available, with descriptions | *(unset)* |"
+
+[[anchor]]
+file = "docs/adr/0001-what-kind-of-project-this-is.md"
+render = "status_decided"
+find = "- **Status:** proposed"
+
+[[anchor]]
+file = "docs/adr/0001-what-kind-of-project-this-is.md"
+render = "today"
+find = "- **Date:** YYYY-MM-DD"
+
+[[anchor]]
+file = "docs/adr/0001-what-kind-of-project-this-is.md"
+render = "kind_decision"
+find = """
+*(Which one, and why. State the bar in a sentence somebody can hold: what this
+project owes whoever uses it, and what it does not.)*"""
+
+[[anchor]]
+file = "docs/adr/0002-tooling-roles.md"
+render = "status_decided"
+find = "- **Status:** proposed"
+
+[[anchor]]
+file = "docs/adr/0002-tooling-roles.md"
+render = "today"
+find = "- **Date:** YYYY-MM-DD"
+
+[[anchor]]
+file = "docs/adr/0002-tooling-roles.md"
+render = "tooling_option"
+find = """
+### A. *(what this project chose)*
+
+**For:**
+
+**Against:**"""
+
+[[anchor]]
+file = "docs/adr/0002-tooling-roles.md"
+render = "tooling_decision"
+find = """
+*(What fills each role, and why. Where a house default was taken unchanged, say
+so in one line and cite it rather than restating the reasoning. Record the actual
+invocations in the table at the top of
+[`../../CLAUDE.md`](../../CLAUDE.md#commands) — this document is the reasoning,
+that table is the reference.)*"""
+
+[[anchor]]
+file = "docs/adr/README.md"
+render = "index_status"
+arg = "0001"
+find = "| [0001](0001-what-kind-of-project-this-is.md) | What kind of project this is, and the bar that follows | proposed |"
+
+[[anchor]]
+file = "docs/adr/README.md"
+render = "index_status"
+arg = "0002"
+find = "| [0002](0002-tooling-roles.md) | What fills the four tool roles, and what the gate covers | proposed |"

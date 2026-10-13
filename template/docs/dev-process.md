@@ -302,7 +302,8 @@ unnoticed, with two others also over. A number in prose is not a check.
 **The handoff is a register of what is not yet done or not yet routed, and
 shrinking it to nothing is the objective of the unit of work.** Not a check at
 the end: the file is deleted because there is nothing left in it, rather than
-deleted in order to declare the journey over.
+deleted in order to declare the journey over. The formal taxonomy, sweep procedure,
+and issue tracker integration are in [`routing-and-sweep-spec.md`](routing-and-sweep-spec.md).
 
 That framing changes how it is used. A handoff treated as a report is written
 once and read at resume. A handoff treated as a burn-down gets **shorter every
