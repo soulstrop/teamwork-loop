@@ -108,13 +108,16 @@ Every item discovered or proposed is classified by **Scale** and **Context**:
 Managing individual task TODO lists inside prose Markdown handoff files previously caused semantic drift and vague `TODO` $\to$ `DONE` transitions.
 
 Under this specification, responsibilities are cleanly separated:
+
 1. **Active Task Execution:** Handled deterministically by `.beads/` child issues. Micro-tasks are moved between states (`ready` $\to$ `in-progress` $\to$ `resolved`) using exact CLI calls verified by failing/passing tests.
 2. **The Handoff Document (`docs/handoff/J#.md`):** Functions as the **Implementation Spec, Context Bridge & Residue Register**:
    * **Context Bridge:** Links the Journey document (`docs/journeys/J#.md`), names the active E2E test, and records cold session state.
    * **Residue Register:** Captures unexpected insights, unrouted knowledge, or edge-case notes that surface during implementation.
 
 ### 5.2 The Residue Test & Process Feedback Loop
-When all child issue tasks for a journey reach `resolved` in `.beads/`:
+When all child issue tasks for a journey reach `resolved` in
+`.beads/`:
+
 1. The developer/agent scans the remaining notes in `docs/handoff/J#.md`.
 2. Each residual note is routed (to an ADR, a `design-note`, or a `deferred` beads issue with a trigger).
 3. **The Feedback Loop:** If an item cannot be routed into existing categories, it MUST be treated as a **Process Finding**. Log it in `docs/experiments.md` or `CLAUDE.md` to improve the framework's routing rules before deleting the handoff file.
