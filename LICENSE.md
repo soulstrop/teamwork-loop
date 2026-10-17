@@ -21,6 +21,6 @@ terms.
 
 ## Contributions
 
-Contributions are welcome under a contributor licence agreement, which keeps the
-project able to relicense as a whole. Open an issue before sending a pull
-request.
+Contributions are welcome under the [contributor licence agreement](CLA.md),
+which keeps the project able to relicense as a whole. You keep the copyright in
+what you contribute. Open an issue before sending a pull request.
