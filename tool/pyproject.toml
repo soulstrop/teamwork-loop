@@ -3,6 +3,7 @@ name = "teamwork-init"
 version = "0.1.0"
 description = "Step 0 as a wizard: hydrate the framework's template set into a new project"
 readme = "README.md"
+license = "AGPL-3.0-only"
 requires-python = ">=3.11"
 dependencies = ["textual>=0.80"]
 
