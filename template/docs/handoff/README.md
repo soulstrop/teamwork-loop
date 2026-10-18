@@ -59,6 +59,9 @@ Handling depends on which kind it is:
 
 - **Knowledge** → route it (a rule, a decision, a word, a plan change), then
   delete the line. The handoff caught a miss, which is it working.
+- **Work too small for a journey**, and belonging to no other one → the
+  release's clean-up list in [`../roadmap.md`](../roadmap.md), then delete the
+  line.
 - **Checkable state** → a document is the wrong fix. Make a task refuse, then
   delete the line. The task is now the thing that remembers.
 - **Neither** → **stop, and treat it as a process finding.** A document is

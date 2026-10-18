@@ -45,6 +45,9 @@ the same attention again on the next read. The deletion is the receipt.
 - **Knowledge** — a rule, a decision, a word, a plan change. Route it using the
   question in `CLAUDE.md`, then delete the line. The handoff caught a miss, which
   is it working.
+- **Work too small for a journey**, and belonging to no other one — add a line
+  to the current release's clean-up list in `docs/roadmap.md`, naming this
+  journey, then delete the line here.
 - **Checkable state** — something a task could assert rather than a document.
   Make the task refuse, then delete the line. The task is now what remembers.
 - **Neither** — **stop and say so.** A document is missing a job or a routing

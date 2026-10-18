@@ -11,7 +11,7 @@ wrote down, and the citation is there so you can judge whether it travels. Where
 a rule has no evidence behind it and is here on argument alone, it says so.
 
 **This document is also the container for what this project learns about the
-process** — the third feedback loop in §10. Add to it; it is not read-only.
+process** — the process loop in §8. Add to it; it is not read-only.
 
 ---
 
@@ -165,6 +165,37 @@ change the answer**. Without that last part it becomes a list nobody re-reads �
 and a deferral recorded nowhere is one the next simplification pass raises again,
 having lost the reason it was declined.
 
+### A release ends with a clean-up and a layer pass
+
+The rule is in
+[`../CLAUDE.md`](../CLAUDE.md#4-the-journey-loop--eight-steps-every-journey).
+*It is here on practice across projects rather than on written evidence.*
+
+**Small work needs a home that is not a journey.** Residue is not only
+knowledge. Some of it is work — a rename, a missing guard, a test that should
+exist — too small to deserve eight steps, and belonging to no journey still to
+come. Folded into the next journey, it pads a diff that should be about one
+actor's goal. Left in the handoff, it stops the handoff reaching zero. Dropped,
+it is lost. So it goes on the release's clean-up list in
+[`roadmap.md`](roadmap.md), and the clean-up works the list down as one unit
+once the journeys are built.
+
+**Journeys see their own path through the layers, never a whole layer.** Each
+step 6 simplifies what one journey touched. After several journeys, every
+interface between layers has been extended by each of them in turn and looked at
+as one surface by none: conversions done twice, a parameter threaded through for
+a single caller, a service function per journey where one would do. The layer
+pass reads by layer to find those. It comes after the clean-up, so it reads the
+code the release will actually ship.
+
+**The journey E2Es are what make it safe.** They select by role and name rather
+than by structure, so the layer pass can reshape the internals freely, and an E2E
+going red means the pass changed behaviour rather than shape.
+
+**Both end in step 8.** What they find is step 8's question asked at release
+scale, and it arrives at the cheapest moment to act on it: the next release's
+journeys are mostly still sketches, so changing them costs a rewrite of a row.
+
 ### The dials, and what sets them
 
 Not every rule above applies at every quality bar. The kind of project — recorded
@@ -180,6 +211,7 @@ records only its **deviations** from the column it picked.
 | ADRs written | only what you would re-argue | yes | yes | yes |
 | Simplification pass | skip | yes | yes | yes |
 | Step 8 | light | yes | yes | yes |
+| Clean-up and layer pass at release end | skip | yes | yes | yes |
 | Config and secrets | committed defaults fine | fine | must not leak | no defaults; refuses at startup |
 | Documents beyond roadmap + journeys | none | glossary, design notes | the full set | the full set |
 
@@ -319,6 +351,9 @@ place is indistinguishable from one nobody has looked at, and it costs the same
 attention again on the next read. The deletion is the receipt.
 
 - **Knowledge** → route it, then delete the line. The handoff caught a miss.
+- **Work too small for a journey**, and belonging to no other one → the
+  release's clean-up list in [`roadmap.md`](roadmap.md), then delete the line.
+  The clean-up at the end of the release is what does it.
 - **Checkable state** → a document is the wrong fix. Make a task refuse, then
   delete the line. The task is now the thing that remembers.
 - **Neither** → **stop, and treat it as a process finding.** An unanticipated
@@ -339,13 +374,14 @@ nothing.
 
 ## 8. The process loop
 
-Three feedback loops run, at widening scope, and only the first two have a
+Four feedback loops run, at widening scope, and only the first three have a
 cadence:
 
 | Loop | Feeds back into | Triggered by |
 |---|---|---|
 | The inner loop | the code | a red test |
 | The journey loop | the plan, at step 8 | the journey finishing |
+| The release loop | the plan, at the step 8 after the clean-up and after the layer pass | the release's last journey finishing |
 | **The process loop** | the process itself | friction in how the work is done |
 
 **The third one is this document**, together with `CLAUDE.md` and the tasks — the

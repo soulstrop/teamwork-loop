@@ -50,6 +50,22 @@ to.
 **Journey loop.** The eight steps, once per journey. Step 8 is what feeds back
 into the plan.
 
+**Release loop.** The two units that end a release — **the clean-up** and **the
+layer pass** — each closed by step 8, so what they find reaches the plan for the
+releases still to come.
+
+**Clean-up list.** The current release's list, in [`roadmap.md`](roadmap.md), of
+work too small to deserve a journey and belonging to no other one. Filled from
+handoff residue; emptied by **the clean-up**, the journey-sized unit after the
+release's last journey.
+
+**Layer pass.** The last unit of a release: simplification read by layer rather
+than by journey, aimed at the surfaces between layers. Distinct from step 6's
+**simplification pass**, which covers only what one journey touched.
+
+*Rejected:* **clean-up journey** and **refactoring journey**, because neither is
+a journey — no actor, and no new E2E.
+
 **Inner loop.** The tight build cycle inside one journey — the `check` task and
 the journey's own E2E, run continuously.
 

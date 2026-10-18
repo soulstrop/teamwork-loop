@@ -1,6 +1,6 @@
 ---
 name: step-8
-description: Run step 8 of the journey loop — fold what the journey taught into the plan that is left. Use when a journey's implementation is complete and deployed. Triggers: "run step 8", "fold this back", "close out the journey", "the journey is done", "update the plan".
+description: Run step 8 of the journey loop — fold what the journey taught into the plan that is left. Use when a journey's implementation is complete and deployed, and after a release's clean-up and its layer pass. Triggers: "run step 8", "fold this back", "close out the journey", "the journey is done", "the clean-up is done", "the layer pass is done", "update the plan".
 ---
 
 # Step 8 — fold what the journey taught into the plan that is left
@@ -14,6 +14,11 @@ this document set is short because it ran.
 
 **The question is not "what did we learn". It is "what does this make false
 elsewhere".**
+
+The same step closes the two units at the end of a release, the clean-up and the
+layer pass. Read "journey" below as whichever unit just finished. For the layer
+pass, the first question carries most of the weight: a reshaped surface between
+layers changes what every later journey will build against.
 
 ## 1. Ask the four questions
 
@@ -47,7 +52,8 @@ Use the ordered question in `CLAUDE.md`. Briefly:
 
 architecturally significant → **ADR** · a rule for writing similar code →
 **design notes** · a word → **glossary** · changes what is left to build →
-**roadmap** · changes how the next change is made → **CLAUDE.md** · belongs to
+**roadmap** · work too small for a journey → the release's **clean-up list** in
+the roadmap · changes how the next change is made → **CLAUDE.md** · belongs to
 the business → **stakeholder questions**
 
 ## 3. Rewrite, do not annotate

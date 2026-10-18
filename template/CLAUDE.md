@@ -156,6 +156,23 @@ change the answer** — without that last part it becomes a list nobody re-reads
 
 Step 8 is the easiest step to skip and the one everything else depends on. Run it.
 
+**A release ends with two units that are not journeys**, once its last journey
+has landed:
+
+1. **The clean-up** — the release's clean-up list in
+   [`docs/roadmap.md`](docs/roadmap.md), worked as one journey-sized unit. The
+   list holds work too small to deserve a journey and belonging to no other one,
+   routed there from handoff residue (§7) as the release goes.
+2. **The layer pass** — simplification read by layer rather than by journey:
+   the surfaces between domain, storage, service and interface, which no single
+   journey sees whole. Building a layer across journeys is still wrong (§2);
+   *reviewing* one, after the journeys exist, is how the seams get simplified.
+
+Neither writes a new E2E. Every journey's E2E is the contract both must keep
+green, unchanged. Each ends the way a journey does — the gate, commit, deploy,
+then **step 8**, folding what it found into the plan that is left. The release is
+done when the layer pass's step 8 is.
+
 ## 5. One named gate, and tasks rather than tools
 
 - **Every repeated command has a name; run the task, not the tool it wraps.**
@@ -180,7 +197,8 @@ Step 8 is the easiest step to skip and the one everything else depends on. Run i
 3. A word, or a word you nearly used? → [`docs/glossary.md`](docs/glossary.md).
    Record rejected names with their reason, or they get re-proposed within a week
 4. Changes what is left to build? → [`docs/roadmap.md`](docs/roadmap.md), by
-   rewriting it
+   rewriting it. Work too small for a journey and belonging to none goes on the
+   current release's clean-up list there
 5. Must change how the next change is made? → **this file**
 6. Belongs to somebody who knows the business rather than the code? →
    [`docs/stakeholder-questions.md`](docs/stakeholder-questions.md)
@@ -215,6 +233,8 @@ place is indistinguishable from one nobody has looked at, and it costs the same
 attention again on the next read. Handling depends on the kind:
 
 - **Knowledge** → route it (§6), then delete the line. The handoff caught a miss.
+- **Work too small for a journey**, and belonging to no other one → the
+  release's clean-up list (§4), then delete the line.
 - **Checkable state** → a document is the wrong fix. Make a task refuse, then
   delete the line.
 - **Neither** → **stop, and treat it as a process finding.** A document is

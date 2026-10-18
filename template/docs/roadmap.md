@@ -46,6 +46,11 @@ release keeps its number and its document; the suffix rule
 ([`journeys/README.md`](journeys/README.md#numbering)) exists so that no
 rearrangement ever renumbers anything.
 
+**Every release ends with the clean-up and the layer pass** — units of work, not
+journeys, so they take the last two rows of the release without numbers. The
+reasoning is
+[`dev-process.md`](dev-process.md#a-release-ends-with-a-clean-up-and-a-layer-pass).
+
 ### Release 1 — *(what it makes possible)*
 
 *All documents. State is `done` · `next` · blank.*
@@ -54,9 +59,18 @@ rearrangement ever renumbers anything.
 |---|---|---|---|
 | J1 | | | |
 | J2 | | | |
+| — | **Clean-up** — the list below | — | |
+| — | **Layer pass** — the surfaces between layers | — | |
 
 *Link each row to its document as it is written. Left unlinked until then, so the
 link checker passes on an empty project.*
+
+#### Clean-up list
+
+*Work too small to deserve a journey and belonging to no other one, routed here
+from handoff residue. One line each, naming the journey it came from. Emptied by
+the clean-up; anything that turns out to be journey-sized becomes a row above
+instead.*
 
 ### Release 2 — *(what it makes possible)*
 
