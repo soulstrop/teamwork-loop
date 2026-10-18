@@ -47,6 +47,9 @@ Either way, the next step is drafting the first release's journeys.
 two rules the set obeys, the planning and implementation session modes, step 0,
 and what each file arrives carrying.
 
+**[ROADMAP.md](ROADMAP.md)** — what is left to build for the framework itself,
+including the 2.0 bring-your-own-tracker release.
+
 ## Licence
 
 `template/` is public domain (CC0), so a project built from it owes nothing for
