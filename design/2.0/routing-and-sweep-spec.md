@@ -1,5 +1,10 @@
 # Routing Pipeline & Sweep Specification
 
+> **Draft input to 2.0, not part of 1.0.** This was written before the 2.0 plan
+> and is kept as a source for it, not as a specification to implement. Its beads
+> commands and schema do not match the real `bd` (1.3.1). What 2.0 takes from it
+> is recorded in [`ROADMAP.md`](../../ROADMAP.md#release-20--bring-your-own-issue-tracker-beads-by-default).
+
 This document formalizes the lifecycle, taxonomy, routing rules, **granularity matrix**, **dependency graphs**, **trigger evaluation engine**, and sweep procedure for all TODOs, findings, raw ideas, and work items within the framework.
 
 It integrates a **Git-backed local issue store** (the `beads` / `.beads/` model) to maintain issue state without breaking the **cold-start constraint** of LLM coding assistants or creating external service dependencies.

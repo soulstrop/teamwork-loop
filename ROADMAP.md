@@ -2,11 +2,10 @@
 
 ## Where we are
 
-`main` is the roadmap-and-handoff method plus one stray document:
-`template/docs/routing-and-sweep-spec.md` describes a beads integration that
-belongs to neither version and does not match the real `bd`. Removing it is what
-stands between `main` and **1.0**. **2.0** turns the issue tracker into a fifth
-tool role — bring your own, with beads as the default — and is not started.
+`main` is the roadmap-and-handoff method. Recording the process version in
+generated projects and tagging it are what stand between `main` and **1.0**.
+**2.0** turns the issue tracker into a fifth tool role — bring your own, with
+beads as the default — and is not started.
 
 This document is what is left to build *for the framework itself*. The roadmap a
 project gets is [`template/docs/roadmap.md`](template/docs/roadmap.md), and this
@@ -19,8 +18,8 @@ items, and a per-journey handoff holds the burn-down. No tracker is required.
 
 | # | Item | State |
 |---|---|---|
-| 1.1 | **Remove `routing-and-sweep-spec.md`** and its references in `template/docs/README.md`, `template/docs/dev-process.md` and `USING-THIS-FRAMEWORK.md` | next |
-| 1.2 | **Record the process version in generated projects** — a `Process: 1.0` line in the template's `CLAUDE.md`, written by `teamwork-init` and covered by `verify` | |
+| 1.1 | **Move `routing-and-sweep-spec.md` out of the template** to `design/2.0/`, and drop its references in `template/docs/README.md`, `template/docs/dev-process.md` and `USING-THIS-FRAMEWORK.md` | done |
+| 1.2 | **Record the process version in generated projects** — a `Process: 1.0` line in the template's `CLAUDE.md`, written by `teamwork-init` and covered by `verify` | next |
 | 1.3 | **Tag `v1.0`** once the tool's tests and `verify` are green | |
 
 ## Release 2.0 — bring your own issue tracker, beads by default
@@ -46,6 +45,17 @@ way they already name commands, so the tracker can change without a rewrite.
 **Ordering.** 2.1 comes first because every other item is written against the
 contract. 2.9 comes before release, not after: a role with one implementation is
 a guess, and the contract should be corrected while nothing depends on it.
+
+**Sources.** [`design/2.0/routing-and-sweep-spec.md`](design/2.0/routing-and-sweep-spec.md)
+is an earlier draft of a beads integration. Its commands and schema predate the
+real `bd`, so it is a source of ideas, not a specification. What to draw from it:
+
+- for 2.1, the split of specifications in markdown and state in the tracker, and
+  its matrix of which granularity lives where;
+- for 2.3, its taxonomy of scale and context, as a starting point for the task
+  vocabulary;
+- for 2.6, its explicit trigger types and the intake sweep, which answer the
+  missing condition triggers noted under open items.
 
 ## Decisions open
 

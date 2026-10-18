@@ -141,7 +141,6 @@ commands** — "the `ship` task" — so the runner can change without a rewrite.
 | [`CLAUDE.md`](template/CLAUDE.md) | The profile, the conventions, the eight-step loop |
 | [`docs/README.md`](template/docs/README.md) | The index, the routing map, the two session modes |
 | [`docs/dev-process.md`](template/docs/dev-process.md) | The method, the dials, and the evidence behind each claim |
-| [`docs/routing-and-sweep-spec.md`](template/docs/routing-and-sweep-spec.md) | The TODO taxonomy, sweep algorithm, dependencies, and triggers |
 | [`docs/design-notes.md`](template/docs/design-notes.md) | Engineering rules that generalise, marked `[inherited]` |
 | [`docs/glossary.md`](template/docs/glossary.md) | The vocabulary of the work itself |
 | [`docs/adr/`](template/docs/adr/) | Lifecycle, sections, the template, and ADRs 0001–0002 |

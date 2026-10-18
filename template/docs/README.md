@@ -40,7 +40,6 @@ loaded before work can start, and how reliably the rest can be found from there.
 | [`glossary.md`](glossary.md) | What each word means in which context, and the names rejected | Anything that is not a word used here | implementation |
 | [`handoff/`](handoff/README.md) | The current unit's micro-state, for a resume that starts from zero | Anything durable — that gets routed instead | implementation |
 | [`dev-process.md`](dev-process.md) | **How the work is done**, and the evidence for each claim | Anything specific to this system | process |
-| [`routing-and-sweep-spec.md`](routing-and-sweep-spec.md) | **Routing pipeline, TODO taxonomy, sweep procedure, dependencies & triggers** | Issue tracker implementation details | process |
 | [`experiments.md`](experiments.md) | Investigations into the process. **A menu, not a backlog** | Conclusions, which route into `dev-process.md` | process |
 | [`stakeholder-questions.md`](stakeholder-questions.md) | Decisions taken provisionally that belong to somebody who knows the business | Anything an engineer can settle alone | output |
 | [`inbox/`](inbox/README.md) | Unrouted ideas, held rather than filed | Anything that has a home | planning |
