@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Write or update the handoff for the journey in flight, and run the residue test against it. Use when pausing work mid-journey, when resuming and the handoff is stale, or at step 8 before deleting it. Triggers: "write the handoff", "update the handoff", "pausing here", "wrap up for now", "close out J<N>".
+description: Handoff for the journey in flight — rewrite it as current state and run its residue loop to zero. Use when pausing mid-journey, or resuming with a stale handoff. Triggers: "pausing here", "resuming J<N>", "update the handoff".
 ---
 
 # Handoff

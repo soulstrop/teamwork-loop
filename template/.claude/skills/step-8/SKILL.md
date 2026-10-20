@@ -1,6 +1,6 @@
 ---
 name: step-8
-description: Run step 8 of the journey loop — fold what the journey taught into the plan that is left. Use when a journey's implementation is complete and deployed, and after a release's clean-up and its layer pass. Triggers: "run step 8", "fold this back", "close out the journey", "the journey is done", "the clean-up is done", "the layer pass is done", "update the plan".
+description: Step 8 — fold what a finished unit taught into the plan that is left. Use when a journey is complete and deployed, or a release's clean-up or layer pass is. Runs the handoff to zero as its last step. Triggers: "run step 8", "the journey is done", "the clean-up is done", "the layer pass is done".
 ---
 
 # Step 8 — fold what the journey taught into the plan that is left
