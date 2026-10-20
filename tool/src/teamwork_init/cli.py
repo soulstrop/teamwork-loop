@@ -6,7 +6,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from . import anchors
+from . import anchors, links
 from . import catalogue as catalogue_module
 from .catalogue import CatalogueError
 from .model import HOUSE_PRIOR
@@ -50,10 +50,12 @@ def main(argv: list[str] | None = None) -> int:
 def verify(catalogue) -> int:
     """Fail loudly when the tool and the documents it renders have drifted apart.
 
-    Two things can rot independently. An anchor is a string the tool holds and the
-    template owns, so a template edit can strand it. And the tables parsed out of
-    the document set are read by shape, so a change to one can leave the wizard
-    quietly asking about nothing. Both are checked here, and this runs in `check`.
+    Three things can rot independently. An anchor is a string the tool holds and the
+    template owns, so a template edit can strand it. The tables parsed out of the
+    document set are read by shape, so a change to one can leave the wizard quietly
+    asking about nothing. And a renamed file or heading breaks every link to it,
+    in the framework's own documents as much as the template's. All three are
+    checked here, and this runs in `check`.
     """
     problems = anchors.verify(catalogue.template)
 
@@ -81,6 +83,9 @@ def verify(catalogue) -> int:
         if not (catalogue.template / "docs" / filename).exists():
             problems.append(f"docs/README.md lists {filename}, which is not in the set")
 
+    documents = links.framework_documents(catalogue.root)
+    problems += links.link_problems(catalogue.root, documents)
+
     for problem in problems:
         print(f"teamwork-init: {problem}", file=sys.stderr)
     if problems:
@@ -93,7 +98,8 @@ def verify(catalogue) -> int:
     print(
         f"{len(anchors.manifest())} anchors resolve, "
         f"{len(catalogue.dials)} dials, {len(catalogue.ladder)} rungs, "
-        f"{len(catalogue.conditional_docs)} conditional documents."
+        f"{len(catalogue.conditional_docs)} conditional documents, "
+        f"links resolve in {len(documents)} files."
     )
     return 0
 

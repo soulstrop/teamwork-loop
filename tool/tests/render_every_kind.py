@@ -14,10 +14,9 @@ from itertools import product
 from pathlib import Path
 
 from teamwork_init import catalogue as catalogue_module
+from teamwork_init.links import link_problems
 from teamwork_init.model import Answers, DesignSystem, Kind, Rung, default_conditional_docs
 from teamwork_init.plan import create
-
-from .linkcheck import link_problems
 
 
 def main() -> int:

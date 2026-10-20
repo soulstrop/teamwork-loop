@@ -6,6 +6,7 @@ import pytest
 
 from teamwork_init import anchors
 from teamwork_init import catalogue as catalogue_module
+from teamwork_init.links import link_problems
 from teamwork_init.model import (
     Answers,
     DesignSystem,
@@ -16,8 +17,6 @@ from teamwork_init.model import (
     slugify,
 )
 from teamwork_init.plan import InitError, create
-
-from .linkcheck import link_problems
 
 
 @pytest.fixture(scope="session")
