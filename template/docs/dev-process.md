@@ -329,47 +329,34 @@ with their reasoning, existed nowhere else and were one `rm` from being lost.
 as the signal to split a module. One was flagged by hand at 707 and reached 1,078
 unnoticed, with two others also over. A number in prose is not a check.
 
-### The handoff burns down, and the residue test is a loop
+### The handoff burns down, and the residue loop runs to zero
 
-**The handoff is a register of what is not yet done or not yet routed, and
-shrinking it to nothing is the objective of the unit of work.** Not a check at
-the end: the file is deleted because there is nothing left in it, rather than
-deleted in order to declare the journey over.
+The loop and its four kinds are in
+[`../CLAUDE.md`](../CLAUDE.md#7-the-handoff-and-the-residue-loop), because it
+runs every time the handoff is touched. What follows is why.
 
-That framing changes how it is used. A handoff treated as a report is written
-once and read at resume. A handoff treated as a burn-down gets **shorter every
-session**, and its length is the honest measure of how much of the unit remains.
+**Shrinking the handoff to nothing is the objective, not a check at the end.** A
+handoff treated as a report is written once and read at resume. A handoff
+treated as a burn-down gets **shorter every session**, and its length is the
+honest measure of how much of the unit remains.
 
-**Whatever is in it that is not already somewhere is, by definition, something
-with no home.** Work it as a loop rather than a pass:
+**The deletion is the receipt.** An entry routed but left in place is
+indistinguishable from one nobody has looked at, and it costs the same attention
+again on the next read.
 
-> **Take one signal → handle it → remove the item that raised it → take the
-> next.** Repeat until no signals remain.
+**Checkable state goes to a task, not a document.** The task is then the thing
+that remembers, and it cannot go stale the way a sentence can.
 
-**Removing the item is what proves it was handled.** An entry routed but left in
-place is indistinguishable from one nobody has looked at, and it costs the same
-attention again on the next read. The deletion is the receipt.
+**The loop lengthens before it shortens.** Handling one signal routinely surfaces
+another — routing a rule reveals two documents disagreeing, making a task refuse
+reveals a second caller. That is the loop working, and it is why the exit
+condition is *no signals remain* rather than a number of passes.
 
-- **Knowledge** → route it, then delete the line. The handoff caught a miss.
-- **Work too small for a journey**, and belonging to no other one → the
-  release's clean-up list in [`roadmap.md`](roadmap.md), then delete the line.
-  The clean-up at the end of the release is what does it.
-- **Checkable state** → a document is the wrong fix. Make a task refuse, then
-  delete the line. The task is now the thing that remembers.
-- **Neither** → **stop, and treat it as a process finding.** An unanticipated
-  kind of residue means a document is missing a job or a category is wrong. Log
-  it in [`experiments.md`](experiments.md) and raise it before deleting the line.
-
-**Expect the loop to lengthen before it shortens.** Handling one signal routinely
-surfaces another — routing a rule reveals two documents disagreeing, making a
-task refuse reveals a second caller. That is the loop working, and it is why the
-exit condition is *no signals remain* rather than a number of passes.
-
-The third branch is the one to protect. It is the only signal about the process
-that arrives without anybody going looking for it, which makes it the most
-valuable and the easiest to lose — **filing it into the nearest approximate
-bucket empties the line, feels like progress, and means the categories are never
-questioned.** Reaching zero that way is reaching zero while the project learns
+**The fourth kind, residue that fits no category, is the one to protect.** It is
+the only signal about the process that arrives without anybody going looking for
+it, which makes it the most valuable and the easiest to lose. Filed into the
+nearest approximate bucket, it empties the line and feels like progress while the
+categories go unquestioned: the register reaches zero and the project learns
 nothing.
 
 ## 8. The process loop

@@ -48,13 +48,8 @@ complete categories and an unread instruction look identical.
 
 ## 2. Route each answer
 
-Use the ordered question in `CLAUDE.md`. Briefly:
-
-architecturally significant → **ADR** · a rule for writing similar code →
-**design notes** · a word → **glossary** · changes what is left to build →
-**roadmap** · work too small for a journey → the release's **clean-up list** in
-the roadmap · changes how the next change is made → **CLAUDE.md** · belongs to
-the business → **stakeholder questions**
+Ask the ordered question in `CLAUDE.md` §6 of each answer, in order, and take
+the first destination that fits.
 
 ## 3. Rewrite, do not annotate
 
@@ -75,10 +70,7 @@ next step.
 
 - Update `docs/architecture.md` if the shape changed, or if it currently asserts
   something the code does not do.
-- **Run the handoff to zero.** Take one signal, handle it, delete the item that
-  raised it, take the next — until nothing remains. Then delete the file, because
-  it has reached nothing rather than in order to declare the journey over. The
-  `handoff` skill is this loop.
+- **Run the handoff to zero** with the `handoff` skill, then delete the file.
 - Run the gate, then commit.
 - If the journey's `Lesson:` trailers did not parse, do **not** rewrite history to
   fix them — the trailer is a capture aid and the record is what you just routed.

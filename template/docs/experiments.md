@@ -86,7 +86,7 @@ checking.
 
 **Cost:** one line per journey, at step 8.
 
-**Why it needs recording at all.** The residue test says that a leftover fitting
+**Why it needs recording at all.** The residue loop says that a leftover fitting
 no category is a signal to stop and understand it rather than file it somewhere
 close enough. Silence is ambiguous: complete categories and an unread instruction
 look identical.

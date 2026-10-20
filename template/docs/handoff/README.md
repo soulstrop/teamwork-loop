@@ -8,78 +8,22 @@ journey in flight, named for the journey. Usually there is one; sometimes none.
 each has a home, and the handoff is not it. See the routing question in
 [`../../CLAUDE.md`](../../CLAUDE.md#6-where-a-thing-goes--ask-in-this-order).
 
-This file exists because that second paragraph was learned the hard way.
+A document with no stated job collects everything unfiled; the handoff was that
+document once, and [`../dev-process.md`](../dev-process.md#the-three-failure-modes-all-of-which-happened)
+has what it cost.
 
-## Why it has a stated job
-
-**A document with no stated job collects everything unfiled.** In the project
-this method was generalised from, the handoff was the only document without a
-defined job, so anything that fitted nowhere landed there — and the handoff is
-deliberately disposable. Two consciously-deferred findings, with the reasoning
-behind them, existed nowhere else and were one `rm` from being lost.
-
-The failure was not carelessness. It is what happens structurally when one
-document in a set will accept anything: it becomes the lowest-energy destination
-for exactly the material that most needs a considered home.
-
-## Shrinking it to nothing is the objective
-
-**The handoff is a register of what is not yet done or not yet routed, and its
-target state is empty.** That is not a test applied at the end — it is what the
-unit of work is driving at. A journey is finished when its handoff is nothing,
-and the file is deleted because there is nothing left in it rather than deleted
-in order to declare it finished.
-
-That distinction changes how the document is used. A handoff treated as a report
-gets written once and read at resume. A handoff treated as a burn-down gets
-**shorter every session**, and its length is the honest measure of how much of
-the unit is left.
+## Lifecycle — it burns down to nothing
 
 1. **Created** when a journey starts, or when work is interrupted mid-journey.
-2. **Revised in place, and shrinking.** It is state, not a log — rewrite rather
-   than append. A handoff that reads as a diary has become a record of what used
-   to be true, which no committed document here is. A handoff that is growing is
-   a unit of work that is growing.
+2. **Revised in place, and shrinking.** It is state, not a log: rewrite it. A
+   handoff that is growing is a unit of work that is growing.
 3. **Deleted when it reaches nothing**, at step 8. If deleting it would lose
    something, it had not reached nothing.
 
-## The residue test, run to fixpoint
-
-**Whatever is in the handoff that is not already somewhere is, by definition,
-something with no home.** Work it as a loop, not a pass:
-
-> **Take one signal → handle it → remove the item that raised it → take the
-> next.** Repeat until there are no signals left.
-
-**Removing the item is what proves it was handled.** An entry routed but left in
-place is indistinguishable from one nobody has looked at, and on the next read it
-costs the same attention again. The deletion is the receipt.
-
-Handling depends on which kind it is:
-
-- **Knowledge** → route it (a rule, a decision, a word, a plan change), then
-  delete the line. The handoff caught a miss, which is it working.
-- **Work too small for a journey**, and belonging to no other one → the
-  release's clean-up list in [`../roadmap.md`](../roadmap.md), then delete the
-  line.
-- **Checkable state** → a document is the wrong fix. Make a task refuse, then
-  delete the line. The task is now the thing that remembers.
-- **Neither** → **stop, and treat it as a process finding.** A document is
-  missing a job, or a category is wrong. Log it in
-  [`../experiments.md`](../experiments.md), raise it, and only then delete the
-  line.
-
-**Expect the loop to lengthen before it shortens.** Handling one signal routinely
-surfaces another — routing a rule reveals that two documents disagree, making a
-task refuse reveals a second caller. That is the loop working, and it is why the
-exit condition is *no signals remain* rather than a number of passes.
-
-**The third branch is the one worth protecting.** It is the only signal about the
-process that arrives without anybody going looking for it, and it is the easiest
-to lose: filing it into the nearest approximate bucket empties the line, feels
-like progress, and means the categories are never questioned. Emptying the
-handoff is the objective — but emptying it by filing things where they do not
-belong is how the register gets to zero while the project learns nothing.
+What empties it is the residue loop in
+[`../../CLAUDE.md`](../../CLAUDE.md#7-the-handoff-and-the-residue-loop); why it
+is a loop is in
+[`../dev-process.md`](../dev-process.md#the-handoff-burns-down-and-the-residue-loop-runs-to-zero).
 
 ## Committed, not ignored
 

@@ -79,10 +79,8 @@ and a second word for it is the divergence this document exists to prevent.
 **Outer loop**, because it implies a middle that does not exist.
 
 **Residue.** What is in the handoff that is not already somewhere else — by
-definition, something with no home. Handled as a **loop**: take one signal, deal
-with it, remove the item that raised it, take the next, until none remain.
-Removing the item is what proves it was handled. Residue fitting *no* routing
-category is a process finding, not a filing problem.
+definition, something with no home. Worked to zero by **the residue loop** in
+[`CLAUDE.md`](../CLAUDE.md#7-the-handoff-and-the-residue-loop).
 
 **Handoff.** The current unit's register of what is not yet done or not yet
 routed. **Shrinking it to nothing is the objective of the unit of work**, so it
