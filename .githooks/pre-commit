@@ -1,0 +1,6 @@
+#!/bin/sh
+# Runs `check` in tool/ before every commit: lint, verify (anchors, parsed
+# tables, every link) and the tests. Enable once per clone with
+#   git config core.hooksPath .githooks
+# CI runs the full gate, `ship`, on push and pull request.
+cd "$(git rev-parse --show-toplevel)/tool" && exec mise run check

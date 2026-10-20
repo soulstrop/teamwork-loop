@@ -26,8 +26,11 @@ The licence by path is in [`LICENSE.md`](LICENSE.md); contributions come under
   `tool/src/teamwork_init/anchors.toml`. Change the anchor in the same commit as
   the template text it matches. The dial table in `template/docs/dev-process.md`
   is parsed by the tool, so keep its shape.
-- **After any change to `template/` or `tool/`, run `check` in `tool/`** — lint,
-  `verify` and the tests. Run `ship` before tagging a release.
+- **After any change, run `check` in `tool/`** — lint, the tests, and `verify`,
+  which also resolves every link and heading anchor in the checkout. After a
+  rename, `check` lists the links to fix. Run `ship` before tagging a release;
+  CI runs it on every push. The pre-commit hook runs `check` once a clone sets
+  `git config core.hooksPath .githooks`.
 - **Write agent-facing files for any agent.** `template/CLAUDE.md` and the
   template skills are read by agents other than Claude Code, so keep rules a
   harness may already enforce, such as `template/CLAUDE.md` §9. Rules over

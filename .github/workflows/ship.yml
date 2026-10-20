@@ -1,0 +1,28 @@
+# Runs the gate — `ship` in tool/ — on every push to main and every pull request.
+# `ship` is `check` (lint, verify including every link, the tests) plus a render
+# of every project kind, so a change to template/ or tool/ cannot land red.
+name: Ship
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ship:
+    runs-on: ubuntu-latest
+    env:
+      MISE_TRUSTED_CONFIG_PATHS: ${{ github.workspace }}/tool
+    defaults:
+      run:
+        working-directory: tool
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v2
+        with:
+          working_directory: tool
+      - name: Run the gate
+        run: mise run ship
